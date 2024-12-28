@@ -9,5 +9,9 @@ public class Main {
         stack.push(56);
         System.out.println("The stack is: ");
         stack.display();
+        stack.pop();
+        System.out.println("Peak: "+stack.peak().data);
+        System.out.println("Stack after pop");
+        stack.display();
     }
 }
