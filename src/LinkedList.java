@@ -13,4 +13,10 @@ public class LinkedList {
         }
         System.out.println();
     }
+    public void pop(){
+        head=head.next;
+    }
+    public Node peak(){
+        return head;
+    }
 }
