@@ -1,36 +1,35 @@
-public class LinkedList {
-    Node head;
-    public void push(int data){
-        Node newNode= new Node(data);
-        newNode.next=head;
-        head=newNode;
+class LinkedList {
+    Node head;  // Front of the Queue
+    Node rear;  // Rear of the Queue
+
+    public void enqueue(int data) {
+        Node newNode = new Node(data);
+        if (rear == null) {
+            // If the queue is empty, both head and rear point to the new node
+            head = rear = newNode;
+            return;
+        }
+        rear.next = newNode;  // Link the new node after the current rear
+        rear = newNode;  // Updating the rear
     }
-    public void display(){
-        Node temp= head;
-        while(temp!=null){
-            System.out.print(temp.data+" ");
-            temp=temp.next;
+
+    public void dequeue() {
+        if (head == null) {
+            System.out.println("Queue is Empty");
+            return;
+        }
+        head = head.next;
+        if (head == null) {
+            rear = null;
+        }
+    }
+
+    public void printQueue() {
+        Node curr = head;
+        while (curr != null) {
+            System.out.print(curr.data + " ");
+            curr = curr.next;
         }
         System.out.println();
-    }
-    public void append(int value){
-        Node newNode= new Node(value);
-        if(head==null){
-            head= newNode;
-        }
-        else{
-            Node temp = head;
-            while(temp.next!=null){
-                temp= temp.next;
-            }
-            temp.next=newNode;
-
-        }
-    }
-    public void pop(){
-        head=head.next;
-    }
-    public Node peak(){
-        return head;
     }
 }
