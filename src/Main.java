@@ -3,15 +3,18 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to day 9 stack and Queue Program");
-        LinkedList stack= new LinkedList();
-        stack.push(70);
-        stack.push(30);
-        stack.push(56);
+        LinkedList queue= new LinkedList();
+        queue.append(70);
+        queue.append(30);
+        queue.append(56);
         System.out.println("The stack is: ");
-        stack.display();
-        stack.pop();
-        System.out.println("Peak: "+stack.peak().data);
-        System.out.println("Stack after pop");
-        stack.display();
+        queue.display();
+        queue.pop();
+
+        System.out.println("Queue after pop");
+
+        queue.display();
+        System.out.println("Peak: "+queue.peak().data);
+
     }
 }
